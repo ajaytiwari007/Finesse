@@ -1,0 +1,2 @@
+module ConsumerTypesHelper
+end

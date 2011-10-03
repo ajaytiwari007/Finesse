@@ -1,0 +1,31 @@
+<h1>Listing selected_channel_incentives</h1>
+
+<table cellpadding="3px" cellspacing="3px">
+  <tr>
+    <th>Channel incentive for round</th>
+    <th>Brand</th>
+    <th>Active</th>
+    <th>Value</th>
+    <th>Channel incentive cost</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @selected_channel_incentives.each do |selected_channel_incentive| %>
+  <tr align="center">
+    <td><%= selected_channel_incentive.channel_incentive_for_round_id %></td>
+    <td><%= selected_channel_incentive.brand_id %></td>
+    <td><%= selected_channel_incentive.active %></td>
+    <td><%= selected_channel_incentive.value %></td>
+    <td><%= selected_channel_incentive.channel_incentive_cost %></td>
+    <td><%= link_to 'Show', selected_channel_incentive %></td>
+    <td><%= link_to 'Edit', edit_selected_channel_incentive_path(selected_channel_incentive) %></td>
+    <td><%= link_to 'Destroy', selected_channel_incentive, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Selected channel incentive', new_selected_channel_incentive_path %>

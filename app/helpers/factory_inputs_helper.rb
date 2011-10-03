@@ -1,0 +1,2 @@
+module FactoryInputsHelper
+end

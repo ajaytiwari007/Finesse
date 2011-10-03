@@ -1,0 +1,37 @@
+<%= form_for (@student_group) do |f| %>
+ <center>
+    <p>
+        <%= f.hidden_field :facilitator_group_id, :value=>@facilitator_group.id %>
+    </p>
+
+   <p>
+      <b> <%= f.label "Student Group Name: " %> </b> <br/>
+        <%= f.text_field :name %>
+    </p>
+
+   <p>
+      <b> <%= f.label "Case Study Name: " %> </b> <br/>
+       <%=f.select :case_study_id,CaseStudy.all.collect{|case_study| [case_study.name,case_study.id]}%>
+    </p>
+
+<div id="accordion" align="center" >
+<table cellpadding="2px">
+<tr>
+<td>
+  <h3><a href="#"><b style="color: orange;">SELECT USERS </b></a></h3>
+        <div>
+            <% @facilitator_group.users.each do |user| %>
+                <%= f.fields_for :student_group_users do |builder| %>
+                    <%= builder.hidden_field :student_group_id, :value=>f.id %>
+                    <%= builder.check_box :user_id,{:checked => false},"#{user.id}" %> <%= user.name %> <br/>
+                <%end%>
+            <% end %>
+        </div>
+</td>
+</tr>
+</table>
+</div>
+<p><%= f.submit %></p>
+</center>
+<% end %>
+

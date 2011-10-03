@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Round:</b>
+  <%= @loan.round_id %>
+</p>
+
+<p>
+  <b>Player:</b>
+  <%= @loan.player_id %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @loan.amount %>
+</p>
+
+<p>
+  <b>Rate:</b>
+  <%= @loan.rate %>
+</p>
+
+<p>
+  <b>Start round:</b>
+  <%= @loan.start_round_id %>
+</p>
+
+<p>
+  <b>End round:</b>
+  <%= @loan.end_round_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_loan_path(@loan) %> |
+<%= link_to 'Back', loans_path %>

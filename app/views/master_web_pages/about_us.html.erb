@@ -1,0 +1,198 @@
+<%= content_for :head do %>
+    <%= stylesheet_link_tag "about_us_slider" %>
+    <script type="text/javascript">
+
+        $(
+                function() {
+
+                    $("#slides2").slides({
+                        preload: true,
+                        preloadImage: '/images/orbit.png',
+                        play: 2500,
+                        pause: 2500,
+                        hoverPause: true,
+                        effect: 'slide, fade',
+                        crossfade: false,
+                        slideSpeed: 500,
+                        fadeSpeed: 500
+                    });
+                    $("#slides3").slides({
+                        preload: true,
+                        preloadImage: '/images/orbit.png',
+                        play: 2500,
+                        pause: 2500,
+                        hoverPause: true,
+                        effect: 'slide, fade',
+                        crossfade: false,
+                        slideSpeed: 500,
+                        fadeSpeed: 500
+                    });
+                    $("#slides4").slides({
+                        preload: true,
+                        preloadImage: '/images/orbit.png',
+                        play: 2500,
+                        pause: 2500,
+                        hoverPause: true,
+                        effect: 'slide, fade',
+                        crossfade: false,
+                        slideSpeed: 500,
+                        fadeSpeed: 500
+                    });
+                });
+    </script>
+<% end %>
+
+<table style="width:100%;height: 432px;text-align: left;margin-left: -20px;">
+  <tr>
+    <td style="">
+      <table style="width:100%;height: 432px;margin-top: 0px;">
+        <tr>
+          <td style="padding: 10px;width: 100%;vertical-align: top;">
+            <div id="about_us_green_box" style="padding:30px;background-color: #ff9900;opacity:0.7;border-radius: 18px;width:80%;height:240px;margin-left: 20px;margin-top: -18px;color:white;font-size: 18px;">
+
+              <div id="concept_div">
+                <h2>About Ptotem</h2>
+                Bringing together over five decades of experience in psychology, education and front-line industry
+                experience, we specialize in experiential learning through games, simulations and workshops....
+              </div>
+              <div id="chatter_div" style="display: none;">
+                <h2>Press Coverage</h2>
+                The scroller on the side lists press coverage of Ptotem that mention or discuss aspects of Ptotem
+                overall, such as its structure, success, information, goals, history,
+                or views on Ptotem in general, and so on....
+              </div>
+              <div id="careers_div" style="display: none;">
+                <h2>Our Partners</h2>
+                We work with partners across a spectrum of educational institutions and corporates. Hear what they have
+                to say about their experience of working with us....
+              </div>
+              <div id="contact_div" style="display: none;">
+                <h2>Contact</h2>
+                Freelancer, investor, client, critic or simply somebody passing through. Whoever you might be, do let us
+                know you dropped by....
+
+
+              </div>
+
+            </div>
+          </td>
+        </tr>
+        <tr style="height: 110px;">
+          <td>
+            <%= render '/layouts/about_us_menu' %>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td style="padding: 10px;width: 100%">
+      <!--<div id="yellow_backdrop" style="padding:30px;background-color: #ff9900;opacity:0.5;border-radius: 18px;width:80%;height: 370px;margin-top: -16px;">-->
+      <!--</div>-->
+      <div id="about_us_yellow_box" style="font-size: 14px;overflow: auto;padding:30px;color:black;background-color: transparent;opacity:1;border-radius: 18px;width:90%;height: 370px;margin-top: -34px;">
+
+        <div id="concept_partner_div" style="margin-bottom: 30px;width:90%;height: 300px;">
+          <div id="slides2">
+            <div class="slides_container">
+              <div>
+                <img src="/images/logo.png" style="width: 100px; height: 100px;margin: auto;" class="rollover"/>
+                <br/>
+                Ptotem is a privately held learning initiatives firm, started in 2009 by senior industry professionals
+                from
+                the fields of Business, Instructional Design, HR Management and Psychology.
+              </div>
+              <div>
+                <img src="/images/simulations_off.png" style="width: 100px; height: 100px;margin: auto;" class="rollover"/>
+                <br/>
+                Ptotem's simulation division specializes in designing and administering online simulations and workshops
+                for
+                training, learning and assessment. Today, we cater to many top-ranked business schools and corporate
+                houses in
+                the country for their learning needs.
+              </div>
+              <div>
+                <img src="/images/games_off.png" style="width: 100px; height: 100px;margin: auto;" class="rollover"/>
+                <br/>
+                Ptotem's game division creates board games with a focus to educate on concepts and culture. Look for us
+                at
+                Hamleys, Landmark, Crossword or your neighborhood toy store.
+              </div>
+              <div>
+                <img src="/images/design_off.png" style="width: 100px; height: 100px;margin: auto;" class="rollover"/>
+                <br/>
+                Ptotem's instructional design division creates programs using psychometrics and competitive workshops to
+                map a
+                participant's strengths, interests and styles. The output is used to guide development, career and
+                job-role
+                related discussions.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="chatter_partner_div" style="display: none; margin-bottom: 30px;width:85%;height: 300px;">
+          <div id="slides3">
+            <div class="slides_container">
+              <% @press_chatter.each do |chatter| %>
+                  <div style="text-align: center;">
+                    <%= image_tag chatter.logo.url, :style => "margin:auto;height:100px;border:none;" %>
+                    <br/>
+                    <span style="font-weight: bold;"><%= h chatter.headline %></span><br/>
+                  <span style="font-style: italic;"><%= h chatter.summary %>
+                    , <%= h chatter.date.strftime('%d-%m-%Y') %></span><br/>
+                    <%= h simple_format(chatter.description) %>
+                    <br/>
+                  </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div id="careers_partner_div" style="display: none;">
+          <div id="slides4">
+            <div class="slides_container">
+              <% @testimonial_chatter.each do |chatter| %>
+                  <div style="text-align: center;">
+                    <%= image_tag chatter.logo.url, :style => "margin:auto;height:100px;border:none;" %>
+                    <br/>
+                    <span style="font-weight: bold;"><%= h chatter.headline %></span><br/>
+                    <span style="font-style: italic;"><%= h chatter.summary %></span><br/>
+                    <%= h simple_format(chatter.description) %>
+                    <br/>
+                  </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div id="contact_partner_div" style="display: none;margin-top: -15px;margin-left: auto;margin-right:auto;">
+          <p style="font-size: 14px;">
+            Ptotem Learning Projects LLP,<br/>
+            A326, Antop Hill Warehousing,<br/>
+            Barkat Ali Road,Wadala (East), <br/>
+            Mumbai,India - 400035<br/>
+            <a href="http://maps.google.co.in/maps/ms?msa=0&amp;msid=203265541477027233533.0004aab8247df4293252d&amp;ie=UTF8&amp;vpsrc=6&amp;ll=19.019401,72.866521&amp;spn=0.0142,0.018239&amp;z=15&amp;source=embed">
+              (Find us on the map)
+            </a>
+          </p>
+
+          <p style="font-size: 14px;">
+
+            +91 98 3393 9793 <br/>
+            +91 98 9259 0902 <br/>
+            +91 22 4015 1443 <br/>
+
+            <a href="mailto:info@ptotem.com?subject=Ref. your website...">info@ptotem.com</a>
+          </p>
+          <br/>
+
+          <div>
+            <a href="http://twitter.com/#!/ptotemlearning"><img src="/images/twitter_logo.png"><img src="/images/twitter_logo.png" style="width:50px;height: 50px;"/></a><br/>
+            <a href="http://www.linkedin.com/company/ptotem-learning-projects"><img src="/images/linkedin-logo.png" style="width:50px;height: 50px;"/></a><br/>
+            <a href="https://www.facebook.com/pages/Ptotem-Learning/125071964187317"><img src="/images/facebook-logo.png" style="width:50px;height: 50px; "/></a>
+          </div>
+        </div>
+
+      </div>
+    </td>
+  </tr>
+</table>

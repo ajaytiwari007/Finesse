@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @factory.name %>
+</p>
+
+<p>
+  <b>Employee count:</b>
+  <%= @factory.employee_count %>
+</p>
+
+<p>
+  <b>Capacity:</b>
+  <%= @factory.capacity %>
+</p>
+
+<p>
+  <b>Distance to market:</b>
+  <%= @factory.distance_to_market %>
+</p>
+
+<p>
+  <b>Product type:</b>
+  <%= @factory.product_type_id %>
+</p>
+
+<p>
+  <b>Dealer catchment:</b>
+  <%= @factory.dealer_catchment %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%= @factory.cost %>
+</p>
+
+
+<%= link_to 'Edit', edit_factory_path(@factory) %> |
+<%= link_to 'Back', factories_path %>

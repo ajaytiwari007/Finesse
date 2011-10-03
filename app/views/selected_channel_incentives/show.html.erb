@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Channel incentive for round:</b>
+  <%= @selected_channel_incentive.channel_incentive_for_round_id %>
+</p>
+
+<p>
+  <b>Brand:</b>
+  <%= @selected_channel_incentive.brand_id %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @selected_channel_incentive.active %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @selected_channel_incentive.value %>
+</p>
+
+<p>
+  <b>Channel incentive cost:</b>
+  <%= @selected_channel_incentive.channel_incentive_cost %>
+</p>
+
+
+<%= link_to 'Edit', edit_selected_channel_incentive_path(@selected_channel_incentive) %> |
+<%= link_to 'Back', selected_channel_incentives_path %>

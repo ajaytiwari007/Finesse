@@ -1,0 +1,27 @@
+<h1>Listing ad_effect_on_consumers</h1>
+
+<table>
+  <tr>
+    <th>Consumer</th>
+    <th>Media</th>
+    <th>Ratio</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ad_effect_on_consumers.each do |ad_effect_on_consumer| %>
+  <tr>
+    <td><%= ad_effect_on_consumer.consumer_id %></td>
+    <td><%= ad_effect_on_consumer.media_id %></td>
+    <td><%= ad_effect_on_consumer.ratio %></td>
+    <td><%= link_to 'Show', ad_effect_on_consumer %></td>
+    <td><%= link_to 'Edit', edit_ad_effect_on_consumer_path(ad_effect_on_consumer) %></td>
+    <td><%= link_to 'Destroy', ad_effect_on_consumer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ad effect on consumer', new_ad_effect_on_consumer_path %>

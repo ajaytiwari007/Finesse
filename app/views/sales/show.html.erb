@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Round:</b>
+  <%= @sale.round_id %>
+</p>
+
+<p>
+  <b>Brand:</b>
+  <%= @sale.brand_id %>
+</p>
+
+<p>
+  <b>Volume:</b>
+  <%= @sale.volume %>
+</p>
+
+
+<%= link_to 'Edit', edit_sale_path(@sale) %> |
+<%= link_to 'Back', sales_path %>

@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @case_study.name %>
+</p>
+
+<p>
+  <b>Max round:</b>
+  <%= @case_study.max_round %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_case_study_path(@case_study) %> |
+<%= link_to 'Back', case_studies_path %>

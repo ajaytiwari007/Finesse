@@ -1,0 +1,2 @@
+module MacroIndicatorForRoundsHelper
+end

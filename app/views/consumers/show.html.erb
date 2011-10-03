@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Dealer:</b>
+  <%= @consumer.dealer_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @consumer.name %>
+</p>
+
+<p>
+  <b>Consumer type:</b>
+  <%= @consumer.consumer_type_id %>
+</p>
+
+<p>
+  <b>Product type:</b>
+  <%= @consumer.product_type_id %>
+</p>
+
+<p>
+  <b>Probability of purchase:</b>
+  <%= @consumer.probability_of_purchase %>
+</p>
+
+<p>
+  <b>Ratio of ad:</b>
+  <%= @consumer.ratio_of_ad %>
+</p>
+
+<p>
+  <b>Ratio of channel push:</b>
+  <%= @consumer.ratio_of_channel_push %>
+</p>
+
+<p>
+  <b>Ratio of price:</b>
+  <%= @consumer.ratio_of_price %>
+</p>
+
+
+<%= link_to 'Edit', edit_consumer_path(@consumer) %> |
+<%= link_to 'Back', consumers_path %>

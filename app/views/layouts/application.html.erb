@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <%= stylesheet_link_tag "application","jquery-ui-1.8.16.custom" %>
+    <!--<script type="text/javascript" src="javascripts/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="javascripts/jquery-ui-1.8.16.custom.min.js"></script>-->
+    <%= javascript_include_tag :all %>
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+
+<link type="text/css" href="/stylesheets/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+
+
+         <script type="text/javascript">
+             $(document).ready(function(){
+
+                 // Accordion
+                 $("#accordion").accordion({ header: "h3" });
+
+             });
+         </script>
+
+
+
+
+  </head>
+  <body>
+    <div id="container">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+      <%= content_tag :h1, yield(:title) if show_title? %>
+
+  <% if current_user %>
+           <p style="float: right;"> <%= current_user.email %>   <br />
+      <%= link_to "Sign Out",destroy_user_session_path,:method =>:delete %> </p>
+      <br>
+      <% if current_user.facilitator %>
+          <% role="Professor" %>
+      <% else %>
+          <% if current_user.admin %>
+              <% role="admin" %>
+          <% else %>
+              <% role="Student" %>
+          <% end %>
+      <% end %>
+      <%= "You have signed In as #{role}" %>
+
+  <% else %>
+      <%= link_to "Sign_In", user_session_url, :method => 'post' %>
+  <% end %>
+
+       </div>
+
+  <div id="content">
+  <%= yield %>
+
+</div>
+
+  </body>
+</html>

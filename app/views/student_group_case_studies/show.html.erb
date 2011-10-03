@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Student group:</b>
+  <%= @student_group_case_study.student_group_id %>
+</p>
+
+<p>
+  <b>Case study:</b>
+  <%= @student_group_case_study.case_study_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_student_group_case_study_path(@student_group_case_study) %> |
+<%= link_to 'Back', student_group_case_studies_path %>

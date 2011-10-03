@@ -1,0 +1,33 @@
+<%= form_for(@selected_expense_for_round) do |f| %>
+  <% if @selected_expense_for_round.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@selected_expense_for_round.errors.count, "error") %> prohibited this selected_expense_for_round from being saved:</h2>
+
+      <ul>
+      <% @selected_expense_for_round.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :expense_for_round_id %><br />
+    <%= f.text_field :expense_for_round_id %>
+  </div>
+  <div class="field">
+    <%= f.label :player_id %><br />
+    <%= f.text_field :player_id %>
+  </div>
+  <div class="field">
+    <%= f.label :active %><br />
+    <%= f.check_box :active %>
+  </div>
+  <div class="field">
+    <%= f.label :value %><br />
+    <%= f.text_field :value %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

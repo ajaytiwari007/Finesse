@@ -1,0 +1,27 @@
+<h1>Listing incentive_effect_on_dealers</h1>
+
+<table cellpadding="3px" cellspacing="3px">
+  <tr align="center">
+    <th>Dealer</th>
+    <th>Channel incentive</th>
+    <th>Ratio</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @incentive_effect_on_dealers.each do |incentive_effect_on_dealer| %>
+  <tr align="center">
+    <td><%= incentive_effect_on_dealer.dealer_id %></td>
+    <td><%= incentive_effect_on_dealer.channel_incentive_id %></td>
+    <td><%= incentive_effect_on_dealer.ratio %></td>
+    <td><%= link_to 'Show', incentive_effect_on_dealer %></td>
+    <td><%= link_to 'Edit', edit_incentive_effect_on_dealer_path(incentive_effect_on_dealer) %></td>
+    <td><%= link_to 'Destroy', incentive_effect_on_dealer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Incentive effect on dealer', new_incentive_effect_on_dealer_path %>

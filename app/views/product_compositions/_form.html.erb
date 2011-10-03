@@ -1,0 +1,33 @@
+<%= form_for(@product_composition) do |f| %>
+  <% if @product_composition.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product_composition.errors.count, "error") %> prohibited this product_composition from being saved:</h2>
+
+      <ul>
+      <% @product_composition.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+
+    <%= f.hidden_field :product_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :factory_input_id %><br />
+    <%= f.select :factory_input_id,FactoryInput.all.collect{|factory_input|[factory_input.name,factory_input.id]} %>
+  </div>
+  <div class="field">
+    <%= f.label :ratio %><br />
+    <%= f.text_field :ratio %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

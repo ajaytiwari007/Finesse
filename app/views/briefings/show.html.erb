@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Role:</b>
+  <%= @briefing.role_id %>
+</p>
+
+<p>
+  <b>Round:</b>
+  <%= @briefing.round_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @briefing.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_briefing_path(@briefing) %> |
+<%= link_to 'Back', briefings_path %>

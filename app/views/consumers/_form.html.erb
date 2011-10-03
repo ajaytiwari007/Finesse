@@ -1,0 +1,49 @@
+<%= form_for(@consumer) do |f| %>
+  <% if @consumer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@consumer.errors.count, "error") %> prohibited this consumer from being saved:</h2>
+
+      <ul>
+      <% @consumer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :dealer_id %><br />
+    <%= f.text_field :dealer_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :consumer_type_id %><br />
+    <%= f.text_field :consumer_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :product_type_id %><br />
+    <%= f.text_field :product_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :probability_of_purchase %><br />
+    <%= f.text_field :probability_of_purchase %>
+  </div>
+  <div class="field">
+    <%= f.label :ratio_of_ad %><br />
+    <%= f.text_field :ratio_of_ad %>
+  </div>
+  <div class="field">
+    <%= f.label :ratio_of_channel_push %><br />
+    <%= f.text_field :ratio_of_channel_push %>
+  </div>
+  <div class="field">
+    <%= f.label :ratio_of_price %><br />
+    <%= f.text_field :ratio_of_price %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

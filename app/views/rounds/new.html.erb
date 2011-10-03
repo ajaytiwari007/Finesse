@@ -1,0 +1,61 @@
+<% if @counter>@case_study.max_round %>
+    You have created all the rounds. <%= link_to "Go to Home",:controller => :rounds,:action => "index" %>
+
+<% else %>
+    <%= form_for @round, :url => {:action => 'create', :controller =>:rounds, :round_create_counter=>@counter} do |f| %>
+        <center>
+          <p>
+            <%= f.hidden_field :case_study_id, :value=>@case_study.id %>
+          </p>
+
+          <p>
+            <%= f.label "Name: " %><br/>
+            <%= f.text_field :name %>
+          </p>
+
+          <div id="accordion" align="center">
+            <table cellpadding="2px">
+              <tr>
+                <td><h1>MACRO INDICATORS</h1></td>
+                <td width="15%"></td>
+                <td><h1 align="center">EXPENSES</h1></td>
+              </tr>
+              <tr>
+                <td>
+                  <% @macro_indicators.each do |macro_indicator| %>
+                      <h3><a href="#"><b style="color: orange;"> <%= macro_indicator.name %></b></a></h3>
+
+                      <div>
+                        <% macro_indicator.macro_indicator_options.each do |d| %>
+                            <%= f.fields_for :macro_indicator_for_rounds do |builder| %>
+                                <%= builder.hidden_field :round_id, :value=>f.id %>
+                                <%= builder.check_box :macro_indicator_option_id, {:checked => false}, "#{d.id}" %> <%= d.name %>
+                                <br/>
+                            <% end %>
+                        <% end %>
+                      </div>
+                  <% end %>
+
+                </td>
+                <td width="15%"></td>
+                <td>
+                  <% @departments.each do |department| %>
+                      <h3><a href="#"><b style="color: orange;"><%= department.name %> </b></a></h3>
+
+                      <div>
+                        <% department.expenses.each do |e| %>
+                            <%= f.fields_for :round_expenses do |builder| %>
+                                <%= builder.hidden_field :round_id, :value=>f.id %>
+                                <%= builder.check_box :expense_id, {:checked => false}, "#{e.id}" %> <%= e.name %> <br/>
+                            <% end %>
+                        <% end %>
+                      </div>
+                  <% end %>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <p><%= f.submit %></p>
+        </center>
+    <% end %>
+<% end %>

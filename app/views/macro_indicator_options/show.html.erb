@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Macro indicator:</b>
+  <%= @macro_indicator_option.macro_indicator_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @macro_indicator_option.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_macro_indicator_option_path(@macro_indicator_option) %> |
+<%= link_to 'Back', macro_indicator_options_path %>

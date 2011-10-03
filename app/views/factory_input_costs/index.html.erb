@@ -1,0 +1,27 @@
+<h1>Listing factory_input_costs</h1>
+
+<table>
+  <tr>
+    <th>Factory input</th>
+    <th>Round</th>
+    <th>Input cost</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @factory_input_costs.each do |factory_input_cost| %>
+  <tr>
+    <td><%= factory_input_cost.factory_input_id %></td>
+    <td><%= factory_input_cost.round_id %></td>
+    <td><%= factory_input_cost.input_cost %></td>
+    <td><%= link_to 'Show', factory_input_cost %></td>
+    <td><%= link_to 'Edit', edit_factory_input_cost_path(factory_input_cost) %></td>
+    <td><%= link_to 'Destroy', factory_input_cost, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Factory input cost', new_factory_input_cost_path %>

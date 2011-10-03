@@ -1,0 +1,2 @@
+module ConsumerSelectionsHelper
+end

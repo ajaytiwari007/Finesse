@@ -1,0 +1,37 @@
+
+<h1>Listing facilitators</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Client</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @facilitators.each do |facilitator| %>
+  <tr>
+    <td><%= facilitator.name %></td>
+    <td><%= facilitator.client_id %></td>
+    <td><%= facilitator.user_id %></td>
+    <td><%= link_to 'Show', facilitator %></td>
+    <td><%= link_to 'Edit', edit_facilitator_path(facilitator) %></td>
+    <td><%= link_to 'Destroy', facilitator, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    <td><%= link_to 'Add Facilitator Group',:controller => :facilitator_groups,:action => "new",:facilitator_id=>facilitator.id %></td>
+    <td><%= link_to 'Show All Facilitator Group',:controller => :facilitator_groups,:action => "index",:facilitator_id=>facilitator.id  %></td>
+        <%end %>
+        </tr>
+
+</table>
+
+<br />
+
+
+
+
+<%= render 'form' %>
+
+<%= link_to 'Back',:controller=>:clients ,:action => :new %>

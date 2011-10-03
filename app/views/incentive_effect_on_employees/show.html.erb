@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Employee:</b>
+  <%= @incentive_effect_on_employee.employee_id %>
+</p>
+
+<p>
+  <b>Hr incentive:</b>
+  <%= @incentive_effect_on_employee.hr_incentive_id %>
+</p>
+
+<p>
+  <b>Ratio:</b>
+  <%= @incentive_effect_on_employee.ratio %>
+</p>
+
+
+<%= link_to 'Edit', edit_incentive_effect_on_employee_path(@incentive_effect_on_employee) %> |
+<%= link_to 'Back', incentive_effect_on_employees_path %>

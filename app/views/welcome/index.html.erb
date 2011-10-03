@@ -1,0 +1,25 @@
+<% if current_user %>
+  <% if current_user.facilitator %>
+	this is professor view  <br>
+
+	<%= link_to "Show All Facilitator Group",facilitator_groups_path ,:facilitator_id=>current_user.id %>             <br>
+   <%= link_to "Add Case Study",new_case_study_path %>
+	<%else%>
+    <% if current_user.admin%>
+	this is admin view <br />
+	<%= link_to "Add New Client",new_client_path %><br />
+    <%= link_to "Add New MacroIndicator",new_macro_indicator_path %><br />
+    <%= link_to "Add New HR Incentives",new_hr_incentive_path %><br />
+    <%= link_to "Add New Channel Incentives",new_channel_incentive_path %><br />
+    <%= link_to "Add New Media",new_medium_path %><br />
+    <%= link_to "Add New Factory",new_factory_path %><br />
+
+        <% else %>
+        this is Student view <br />
+     <%= link_to "Play Assigned Games" %>
+
+
+
+   <% end %>
+  <% end %>
+<% end %>

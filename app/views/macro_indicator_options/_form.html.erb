@@ -1,0 +1,25 @@
+<%= form_for(@macro_indicator_option) do |f| %>
+  <% if @macro_indicator_option.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@macro_indicator_option.errors.count, "error") %> prohibited this macro_indicator_option from being saved:</h2>
+
+      <ul>
+      <% @macro_indicator_option.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :macro_indicator_id %><br />
+    <%= f.text_field :macro_indicator_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

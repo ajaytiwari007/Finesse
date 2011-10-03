@@ -1,0 +1,30 @@
+<h1>Listing selected_media</h1>
+
+<table cellpadding="3px" cellspacing="3px">
+  <tr>
+    <th>Round</th>
+    <th>Brand</th>
+    <th>Media</th>
+    <th>Active</th>
+    <th>Advertising cost</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @selected_media.each do |selected_medium| %>
+  <tr  align="center">
+    <td><%= selected_medium.round_id %></td>
+    <td><%= selected_medium.brand_id %></td>
+    <td><%= selected_medium.media_id %></td>
+    <td><%= selected_medium.active %></td>
+    <td><%= selected_medium.advertising_cost %></td>
+    <td><%= link_to 'Show', selected_medium %></td>
+    <td><%= link_to 'Edit', edit_selected_medium_path(selected_medium) %></td>
+    <td><%= link_to 'Destroy', selected_medium, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to 'New Selected medium', new_selected_medium_path %>

@@ -1,0 +1,31 @@
+<h1>Listing player_expenses</h1>
+
+<table>
+  <tr>
+    <th>Round</th>
+    <th>Player</th>
+    <th>Expense</th>
+    <th>Active</th>
+    <th>Value</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @player_expenses.each do |player_expense| %>
+  <tr>
+    <td><%= player_expense.round_id %></td>
+    <td><%= player_expense.player_id %></td>
+    <td><%= player_expense.expense_id %></td>
+    <td><%= player_expense.active %></td>
+    <td><%= player_expense.value %></td>
+    <td><%= link_to 'Show', player_expense %></td>
+    <td><%= link_to 'Edit', edit_player_expense_path(player_expense) %></td>
+    <td><%= link_to 'Destroy', player_expense, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Player expense', new_player_expense_path %>

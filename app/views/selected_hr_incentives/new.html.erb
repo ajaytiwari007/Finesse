@@ -1,0 +1,51 @@
+<%= form_tag :action => 'create',:player_id=>@player.id ,:round_id=>@round.id  %>
+<center>
+
+  <!-- Accordion -->
+  <h2 class="demoHeaders">ALL HR INCENTIVES</h2>
+
+  <div id="accordion" align="center">
+
+      <% @selected_hr_incentives.each_with_index do |selected_hr_incentive, index| %>
+      <%= fields_for "selected_hr_incentives[#{index}]", selected_hr_incentive do |f| %>
+      <% x_hr_incentive=@all_hr_incentives[index] %>
+      <%= f.hidden_field :player_id, :value=>@player.id %>
+      <% if SelectedHrIncentive.find(:first,:conditions=>["player_id=? and hr_incentive_for_round_id=?",@player.id,HrIncentiveForRound.find(:last,:conditions => ['hr_incentive_id=? and round_id=?',x_hr_incentive.id,@round.id]).id])!=nil%>
+          <% @state= true %>
+      <%else%>
+          <% @state= false %>
+      <% end %>
+
+      <h3><a href="#"><b style="color: orange;"><%= x_hr_incentive.name %></b></a></h3>
+      <div>
+
+            <h5 align="right">
+            <%= f.check_box :hr_incentive_for_round_id, {:checked => @state}, "#{HrIncentiveForRound.find(:last,:conditions => ['hr_incentive_id=? and round_id=?',x_hr_incentive.id,@round.id]).id}"  %></h5>
+
+
+                  <table>
+                  <tr>
+                  <td><%= image_tag("factory_bought.png",:size => '150x150') %></td>
+                  <td>
+                  <table>
+                      <tr>
+                      <td>HR Incentive Name :</td>
+                      <td><%= x_hr_incentive.name %></td>
+                      </tr>
+                      <tr>
+                      <td> Cost :</td>
+                      <td><%= x_hr_incentive.cost %>  </td>
+                      </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+              <% end %>
+                  </div>
+
+            <%end%>
+      </div>
+  <%= submit_tag 'Select Channel Incentive', :class=>"cbutton"%>
+
+
+</center>

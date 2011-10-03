@@ -1,0 +1,29 @@
+<%= form_for(@employee_demographic) do |f| %>
+  <% if @employee_demographic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@employee_demographic.errors.count, "error") %> prohibited this employee_demographic from being saved:</h2>
+
+      <ul>
+      <% @employee_demographic.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :case_study_id %><br />
+    <%= f.text_field :case_study_id %>
+  </div>
+  <div class="field">
+    <%= f.label :employee_type_id %><br />
+    <%= f.text_field :employee_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :ratio %><br />
+    <%= f.text_field :ratio %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

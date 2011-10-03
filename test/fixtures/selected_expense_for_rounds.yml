@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  expense_for_round_id: 1
+  player_id: 1
+  active: false
+  value: 1
+
+two:
+  expense_for_round_id: 1
+  player_id: 1
+  active: false
+  value: 1

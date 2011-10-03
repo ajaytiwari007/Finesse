@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  case_study_id: 1
+
+two:
+  name: MyString
+  case_study_id: 1

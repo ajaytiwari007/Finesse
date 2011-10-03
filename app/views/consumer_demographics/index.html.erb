@@ -1,0 +1,27 @@
+<h1>Listing consumer_demographics</h1>
+
+<table cellpadding="3px" cellspacing="3px">
+  <tr align="center">
+    <th>Dealer</th>
+    <th>Consumer type</th>
+    <th>Ratio</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @consumer_demographics.each do |consumer_demographic| %>
+  <tr align="center">
+    <td><%= consumer_demographic.dealer_id %></td>
+    <td><%= consumer_demographic.consumer_type_id %></td>
+    <td><%= consumer_demographic.ratio %></td>
+    <td><%= link_to 'Show', consumer_demographic %></td>
+    <td><%= link_to 'Edit', edit_consumer_demographic_path(consumer_demographic) %></td>
+    <td><%= link_to 'Destroy', consumer_demographic, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Consumer demographic', new_consumer_demographic_path %>

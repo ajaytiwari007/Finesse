@@ -1,0 +1,58 @@
+<h1>Listing range_specifications</h1>
+
+<table>
+  <tr>
+    <th>Min effect of hr incentive</th>
+    <th>Max effect of hr incentive</th>
+    <th>Min effect of channel incentive</th>
+    <th>Max effect of channel incentive</th>
+    <th>Min effect of media</th>
+    <th>Max effect of media</th>
+    <th>Min dealer catchment</th>
+    <th>Max dealer catchment</th>
+    <th>Min consumer catchment</th>
+    <th>Max consumer catchment</th>
+    <th>Min employee count</th>
+    <th>Max employee count</th>
+    <th>Min consumer demographics</th>
+    <th>Max consumer demographics</th>
+    <th>Min Probability of purchase</th>
+    <th>Max probability of purchase</th>
+    <th>Min effect of price</th>
+    <th>Max effect of price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @range_specifications.each do |range_specification| %>
+  <tr>
+    <td><%= range_specification.min_effect_of_hr_incentive %></td>
+    <td><%= range_specification.max_effect_of_hr_incentive %></td>
+    <td><%= range_specification.min_effect_of_channel_incentive %></td>
+    <td><%= range_specification.max_effect_of_channel_incentive %></td>
+    <td><%= range_specification.min_effect_of_media %></td>
+    <td><%= range_specification.max_effect_of_media %></td>
+    <td><%= range_specification.min_dealer_catchment %></td>
+    <td><%= range_specification.max_dealer_catchment %></td>
+    <td><%= range_specification.min_consumer_catchment %></td>
+    <td><%= range_specification.max_consumer_catchment %></td>
+    <td><%= range_specification.min_employee_count %></td>
+    <td><%= range_specification.max_employee_count %></td>
+    <td><%= range_specification.min_consumer_demographics%></td>
+    <td><%= range_specification.max_consumer_demographics %></td>
+    <td><%= range_specification.min_probability_of_purchase %></td>
+    <td><%= range_specification.max_probability_of_purchase %></td>
+    <td><%= range_specification.min_effect_of_price %></td>
+    <td><%= range_specification.max_effect_of_price %></td>
+
+    <td><%= link_to 'Show', range_specification %></td>
+    <td><%= link_to 'Edit', edit_range_specification_path(range_specification) %></td>
+    <td><%= link_to 'Destroy', range_specification, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Range specification', new_range_specification_path %>

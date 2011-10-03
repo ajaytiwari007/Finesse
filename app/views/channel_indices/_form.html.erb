@@ -1,0 +1,29 @@
+<%= form_for(@channel_index) do |f| %>
+  <% if @channel_index.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@channel_index.errors.count, "error") %> prohibited this channel_index from being saved:</h2>
+
+      <ul>
+      <% @channel_index.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :round_id %><br />
+    <%= f.text_field :round_id %>
+  </div>
+  <div class="field">
+    <%= f.label :brand_id %><br />
+    <%= f.text_field :brand_id %>
+  </div>
+  <div class="field">
+    <%= f.label :channel_index %><br />
+    <%= f.text_field :channel_index %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

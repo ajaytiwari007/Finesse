@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Round:</b>
+  <%= @production.round_id %>
+</p>
+
+<p>
+  <b>Player:</b>
+  <%= @production.player_id %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @production.active %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @production.quantity %>
+</p>
+
+<p>
+  <b>Production cost:</b>
+  <%= @production.production_cost %>
+</p>
+
+<p>
+  <b>Factory:</b>
+  <%= @production.factory_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_production_path(@production) %> |
+<%= link_to 'Back', productions_path %>

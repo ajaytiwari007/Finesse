@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @facilitator.name %>
+</p>
+
+<p>
+  <b>Client:</b>
+  <%= @facilitator.client_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @facilitator.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_facilitator_path(@facilitator) %> |
+<%= link_to 'Back to Client', :controller => :clients,:action => 'new' %>

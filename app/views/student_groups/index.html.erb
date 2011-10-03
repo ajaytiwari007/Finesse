@@ -1,0 +1,27 @@
+<h1>Listing student_groups</h1>
+
+<table>
+  <tr>
+    <th>Facilitator group</th>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @student_groups.each do |student_group| %>
+  <tr>
+    <td><%= student_group.facilitator_group_id %></td>
+    <td><%= student_group.name %></td>
+    <td><%= link_to 'Show', student_group %></td>
+    <td><%= link_to 'Edit', edit_student_group_path(student_group) %></td>
+    <td><%= link_to 'Destroy', student_group, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Add Student',:controller => :student_group_users,:action => "new",:student_group_id=>student_group.id %></td>
+      <td><%= link_to 'Show All Student',:controller => :student_group_users,:action => "index",:student_group_id=>student_group.id %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+

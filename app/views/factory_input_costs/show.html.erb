@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Factory input:</b>
+  <%= @factory_input_cost.factory_input_id %>
+</p>
+
+<p>
+  <b>Round:</b>
+  <%= @factory_input_cost.round_id %>
+</p>
+
+<p>
+  <b>Input cost:</b>
+  <%= @factory_input_cost.input_cost %>
+</p>
+
+
+<%= link_to 'Edit', edit_factory_input_cost_path(@factory_input_cost) %> |
+<%= link_to 'Back', factory_input_costs_path %>

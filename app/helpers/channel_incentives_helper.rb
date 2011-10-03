@@ -1,0 +1,2 @@
+module ChannelIncentivesHelper
+end

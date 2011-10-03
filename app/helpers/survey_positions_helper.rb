@@ -1,0 +1,2 @@
+module SurveyPositionsHelper
+end

@@ -1,0 +1,17 @@
+<!--<img src="/images/sim-ribbon.png" width="112" height="112" alt="New Ribbon" id="ribbon">-->
+<div id="slides">
+  <div class="slides_container">
+    <% @products.each do |product| %>
+        <div>
+          <%= image_tag product.photo.url, :size=>"300x300" %>
+          <div class="caption">
+            <br/>
+            <span style="font-size: 16px;font-weight: bolder;"><%= h product.name %></span>
+            <%=h simple_format(product.description) %>
+          </div>
+        </div>
+    <% end %>
+  </div>
+  <a href="#" class="prev" id="prev_button"><img src="images/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
+  <a href="#" class="next" id="next_button"><img src="images/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
+</div>

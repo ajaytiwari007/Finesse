@@ -1,0 +1,59 @@
+<center>
+
+<%= form_tag :action => 'create',:brand_id=>@brand.id ,:round_id=>@round.id %>
+
+   <h2 class="demoHeaders">ALL SELECTED CHANNEL INCENTIVES</h2>
+<div id="accordion" align="center">
+
+          <% @brand=Brand.find(params[:brand_id]) %>
+
+
+
+          <% @selected_channel_incentives.each_with_index do |selected_channel_incentive, index| %>
+            <%= fields_for "selected_channel_incentives[#{index}]", selected_channel_incentive do |f| %>
+
+              <% x_channel_incentive=@all_channel_incentives[index] %>
+              <%= f.hidden_field :brand_id, :value=>@brand.id %>
+              <% if SelectedChannelIncentive.find(:first,:conditions=>["brand_id=? and channel_incentive_for_round_id=?",@brand.id,ChannelIncentiveForRound.find(:last,:conditions => ['channel_incentive_id=? and round_id=?',x_channel_incentive.id,@round.id]).id])  %>
+                <% @state= true %>
+              <%else%>
+                <% @state= false %>
+              <% end %>
+
+                <h3><a href="#"><b style="color: orange;"><%= x_channel_incentive.name %></b></a></h3>
+                <div>
+             <h5 align="right">
+            <%= f.check_box :channel_incentive_for_round_id, {:checked => @state}, "#{ChannelIncentiveForRound.find(:last,:conditions => ['channel_incentive_id=? and round_id=?',x_channel_incentive.id,@round.id]).id}"  %></h5>
+
+
+                  <table>
+                  <tr>
+                  <td><%= image_tag("factory_bought.png",:size => '150x150') %></td>
+                  <td>
+                  <table>
+                      <tr>
+                      <td>Channel Incentive Name :</td>
+                      <td><%= x_channel_incentive.name %></td>
+                      </tr>
+                      <tr>
+                      <td> Type :</td>
+                      <td>
+                        <% if x_channel_incentive.incentive_type%>
+                            Percentage
+                        <% else %>
+                            Fixed
+                            <%end%>
+                        </td>
+                      </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+              <% end %>
+                  </div>
+
+            <%end%>
+      </div>
+    <%= submit_tag "Select Media", :class=>"cbutton"%>
+
+</center>

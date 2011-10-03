@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Round:</b>
+  <%= @expense_for_round.round_id %>
+</p>
+
+<p>
+  <b>Expense:</b>
+  <%= @expense_for_round.expense_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_expense_for_round_path(@expense_for_round) %> |
+<%= link_to 'Back', expense_for_rounds_path %>

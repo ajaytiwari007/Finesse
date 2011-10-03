@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Round:</b>
+  <%= @asset.round_id %>
+</p>
+
+<p>
+  <b>Player:</b>
+  <%= @asset.player_id %>
+</p>
+
+<p>
+  <b>Fixed assets:</b>
+  <%= @asset.fixed_assets %>
+</p>
+
+<p>
+  <b>Investments:</b>
+  <%= @asset.investments %>
+</p>
+
+<p>
+  <b>Inventory:</b>
+  <%= @asset.inventory %>
+</p>
+
+<p>
+  <b>Cash:</b>
+  <%= @asset.cash %>
+</p>
+
+
+<%= link_to 'Edit', edit_asset_path(@asset) %> |
+<%= link_to 'Back', assets_path %>

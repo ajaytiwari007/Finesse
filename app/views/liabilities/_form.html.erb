@@ -1,0 +1,37 @@
+<%= form_for(@liability) do |f| %>
+  <% if @liability.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@liability.errors.count, "error") %> prohibited this liability from being saved:</h2>
+
+      <ul>
+      <% @liability.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :round_id %><br />
+    <%= f.text_field :round_id %>
+  </div>
+  <div class="field">
+    <%= f.label :player_id %><br />
+    <%= f.text_field :player_id %>
+  </div>
+  <div class="field">
+    <%= f.label :long_term_loans %><br />
+    <%= f.text_field :long_term_loans %>
+  </div>
+  <div class="field">
+    <%= f.label :short_term_loans %><br />
+    <%= f.text_field :short_term_loans %>
+  </div>
+
+
+    <%= f.hidden_field :net_worth,:value=>params[:pid]%>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

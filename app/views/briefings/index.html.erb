@@ -1,0 +1,27 @@
+<h1>Listing briefings</h1>
+
+<table>
+  <tr>
+    <th>Role</th>
+    <th>Round</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @briefings.each do |briefing| %>
+  <tr>
+    <td><%= briefing.role_id %></td>
+    <td><%= briefing.round_id %></td>
+    <td><%= briefing.description %></td>
+    <td><%= link_to 'Show', briefing %></td>
+    <td><%= link_to 'Edit', edit_briefing_path(briefing) %></td>
+    <td><%= link_to 'Destroy', briefing, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Briefing', new_briefing_path %>

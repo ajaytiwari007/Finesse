@@ -1,0 +1,25 @@
+ <center>
+<%= form_for @product_type do |f| %>
+
+
+          <p>
+            <%= f.label "Product Type Name: " %><br/>
+            <%= f.text_field :name %>
+          </p>
+                  <% @factory_inputs.each do |factory_input| %>
+                            <%= f.fields_for :product_compositions do |builder| %>
+                                <%= builder.hidden_field :product_type_id, :value=>f.id %>
+                  <table>
+                    <tr>
+                      <td><%= builder.check_box :factory_input_id, {:checked => false}, "#{factory_input.id}" %> <%= factory_input.name %></td> </tr>
+                    <tr>   <td>  <%=f.label :ratio %> <%=builder.text_field :ratio %> </td>
+                       <td>  <%=f.label :weight %> <%=builder.text_field :weight %> </td> </tr>
+                             </table>
+                                <br/>
+                            <% end %>
+                        <% end %>
+
+
+     <p><%= f.submit %></p>
+                <% end %>
+        </center>

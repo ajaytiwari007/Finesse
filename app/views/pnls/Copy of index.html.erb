@@ -1,0 +1,80 @@
+
+<% @pnls.each do |pnl| %>
+
+   <h1> PROFIT AND LOSS FOR THE ROUND <%= pnl.round_id %></h1>
+
+ <table align="center" border="1" cellpadding="25px" style="border-collapse:collapse;font-variant: small-caps;letter-spacing: 0.2em; ">
+    <tr>
+      <th>Particulars</th>
+      <th>Round<%= pnl.round_id %> </th>
+      <th>Round<%= pnl.round_id %></th>
+    </tr>
+<tr>
+  <th>Round</th>
+  <td>   </td>
+  <td><%= pnl.round_id %></td>
+</tr>
+<tr>
+  <th>Player ID</th>
+  <td>   </td>
+  <td><%= pnl.player_id %></td>
+</tr>
+<tr>
+ <th>Income</th>
+  <td>   </td>
+ <td><%= pnl.income %></td>
+</tr>
+  <tr>
+ <th>Cogs</th>
+    <td>   </td>
+  <td><%= pnl.cogs %></td>
+</tr>
+  <tr>
+ <th>Employee Cost</th>
+    <td>   </td>
+  <td><%= pnl.employee_cost %></td>
+</tr>
+  <tr>
+ <th>SGA</th>
+    <td>   </td>
+  <td><%= pnl.sga %></td>
+</tr>
+  <tr>
+ <th>Ebitda</th>
+    <td>   </td>
+ <td><%= pnl.ebitda %></td>
+</tr>
+  <tr>
+ <th>Income</th>
+    <td>   </td>
+ <td><%= pnl.income %></td>
+</tr>
+  <tr>
+ <th>Inv Income</th>
+    <td>   </td>
+ <td><%= pnl.inv_income %></td>
+</tr>
+ <tr>
+ <th>Depreciation</th>
+   <td>   </td>
+ <td><%= pnl.depreciation %></td>
+</tr>
+ <tr>
+ <th>Pbt</th>
+   <td>   </td>
+ <td><%= pnl.pbt %></td>
+</tr>
+ <tr>
+ <th>Tax</th>
+   <td>   </td>
+ <td><%= pnl.tax %></td>
+</tr>
+ <tr>
+ <th>Pat</th>
+   <td>   </td>
+ <td><%= pnl.pat %></td>
+</tr>
+
+</table>
+
+<% end %>

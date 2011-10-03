@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Dealer:</b>
+  <%= @incentive_effect_on_dealer.dealer_id %>
+</p>
+
+<p>
+  <b>Channel incentive:</b>
+  <%= @incentive_effect_on_dealer.channel_incentive_id %>
+</p>
+
+<p>
+  <b>Ratio:</b>
+  <%= @incentive_effect_on_dealer.ratio %>
+</p>
+
+
+<%= link_to 'Edit', edit_incentive_effect_on_dealer_path(@incentive_effect_on_dealer) %> |
+<%= link_to 'Back', incentive_effect_on_dealers_path %>

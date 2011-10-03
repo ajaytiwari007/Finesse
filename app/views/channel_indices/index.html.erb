@@ -1,0 +1,30 @@
+<h1>Listing channel_indices</h1>
+
+<table>
+  <tr>
+    <th>Round Id</th>
+    <th>Dealer Id</th>
+    <th>Brand Id</th>
+    <th>Channel index</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @channel_indices.each do |channel_index| %>
+  <tr>
+    <td><%= channel_index.round_id %></td>
+    <td><%= channel_index.dealer_id %></td>
+    <td><%= channel_index.brand_id %></td>
+    <td><%= channel_index.channel_index %></td>
+    <td><%= link_to 'Show', channel_index %></td>
+    <td><%= link_to 'Edit', edit_channel_index_path(channel_index) %></td>
+    <td><%= link_to 'Destroy', channel_index, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Calculate Channel index', :action => 'calculate_channel_index',:round_id=>1 %>
+<%= link_to 'Delete all Channel indices', :action => 'delete_all_channel_indices',:round_id=>1 %>

@@ -1,0 +1,30 @@
+<h1>Listing consumer_selections</h1>
+
+<table>
+  <tr>
+    <th>Round</th>
+    <th>Customer</th>
+    <th>Purchase</th>
+    <th>Brand</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @consumer_selections.each do |consumer_selection| %>
+  <tr>
+    <td><%= consumer_selection.round_id %></td>
+    <td><%= consumer_selection.customer_id %></td>
+    <td><%= consumer_selection.purchase %></td>
+    <td><%= consumer_selection.brand_id %></td>
+    <td><%= link_to 'Show', consumer_selection %></td>
+    <td><%= link_to 'Edit', edit_consumer_selection_path(consumer_selection) %></td>
+    <td><%= link_to 'Destroy', consumer_selection, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Calculate consumer selections', :action => 'calculate_consumer_selection' ,:round_id=>1%>
+<%= link_to 'delete all consumer selections', :action => 'delete_all_consumer_selections' %>

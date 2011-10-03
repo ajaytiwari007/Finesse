@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Round:</b>
+  <%= @hr_incentive_for_round.round_id %>
+</p>
+
+<p>
+  <b>Hr incentive:</b>
+  <%= @hr_incentive_for_round.hr_incentive_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_hr_incentive_for_round_path(@hr_incentive_for_round) %> |
+<%= link_to 'Back', hr_incentive_for_rounds_path %>

@@ -1,0 +1,59 @@
+<%= form_for(@factory) do |f| %>
+  <% if @factory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@factory.errors.count, "error") %> prohibited this factory from being saved:</h2>
+
+      <ul>
+      <% @factory.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <% min=RangeSpecification.last.min_employee_count %>
+    <% max=RangeSpecification.last.max_employee_count %>
+    <% step=(max-min)/5 %>
+    <% opt=Array.new %>
+    <% for i in 0..5 %>
+    <% opt[i]=min+i*step %>
+    <% end %>
+    <%= f.label :employee_count %><br />
+    <%= f.select :employee_count,opt.collect{|opt| [opt,opt]}%>
+  </div>
+  <div class="field">
+    <%= f.label :capacity %><br />
+    <%= f.text_field :capacity %>
+  </div>
+  <div class="field">
+    <%= f.label :distance_to_market %><br />
+    <%= f.text_field :distance_to_market %>
+  </div>
+  <div class="field">
+    <%= f.label :product_type_id %><br />
+    <%= f.select :product_type_id,ProductType.all.collect{|product_type|[product_type.name,product_type.id]} %>
+    <%= link_to "Add New Product Type",:controller => :product_types,:action => "new"%>
+  </div>
+  <div class="field">
+    <% min=RangeSpecification.last.min_dealer_catchment %>
+    <% max=RangeSpecification.last.max_dealer_catchment %>
+    <% opt=Array.new %>
+    <% for i in 0..max-min %>
+    <% opt[i]=min+i %>
+    <% end %>
+    <%= f.label :dealer_catchment %><br />
+    <%= f.select :dealer_catchment,opt.collect{|opt| [opt,opt]}%>
+  </div>
+  <div class="field">
+    <%= f.label :cost %><br />
+    <%= f.text_field :cost %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

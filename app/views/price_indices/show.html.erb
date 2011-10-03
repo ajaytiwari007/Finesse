@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Round:</b>
+  <%= @price_index.round_id %>
+</p>
+
+<p>
+  <b>Brand:</b>
+  <%= @price_index.brand_id %>
+</p>
+
+<p>
+  <b>Price index:</b>
+  <%= @price_index.price_index %>
+</p>
+
+
+<%= link_to 'Edit', edit_price_index_path(@price_index) %> |
+<%= link_to 'Back', price_indices_path %>

@@ -1,0 +1,29 @@
+<h1>Listing selected_expense_for_rounds</h1>
+
+<table>
+  <tr>
+    <th>Expense for round</th>
+    <th>Player</th>
+    <th>Active</th>
+    <th>Value</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @selected_expense_for_rounds.each do |selected_expense_for_round| %>
+  <tr>
+    <td><%= selected_expense_for_round.expense_for_round_id %></td>
+    <td><%= selected_expense_for_round.player_id %></td>
+    <td><%= selected_expense_for_round.active %></td>
+    <td><%= selected_expense_for_round.value %></td>
+    <td><%= link_to 'Show', selected_expense_for_round %></td>
+    <td><%= link_to 'Edit', edit_selected_expense_for_round_path(selected_expense_for_round) %></td>
+    <td><%= link_to 'Destroy', selected_expense_for_round, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Selected expense for round', new_selected_expense_for_round_path %>

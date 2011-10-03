@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Consumer:</b>
+  <%= @ad_effect_on_consumer.consumer_id %>
+</p>
+
+<p>
+  <b>Media:</b>
+  <%= @ad_effect_on_consumer.media_id %>
+</p>
+
+<p>
+  <b>Ratio:</b>
+  <%= @ad_effect_on_consumer.ratio %>
+</p>
+
+
+<%= link_to 'Edit', edit_ad_effect_on_consumer_path(@ad_effect_on_consumer) %> |
+<%= link_to 'Back', ad_effect_on_consumers_path %>

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Facilitator group:</b>
+  <%= @student_group.facilitator_group_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @student_group.name %>
+</p>
+
+<p>
+  <b>Case Study ID:</b>
+  <%= @student_group.case_study_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_student_group_path(@student_group) %> |
+<%= link_to 'Back to Facilitator Group',:controller => :facilitator_groups,:action => 'new' %>

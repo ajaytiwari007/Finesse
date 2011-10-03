@@ -1,0 +1,36 @@
+<%= form_for(@selected_channel_incentive) do |f| %>
+  <% if @selected_channel_incentive.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@selected_channel_incentive.errors.count, "error") %> prohibited this selected_channel_incentive from being saved:</h2>
+
+      <ul>
+      <% @selected_channel_incentive.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :channel_incentive_for_round_id %><br />
+    <%= f.text_field :channel_incentive_for_round_id %>
+  </div>
+
+    <%= f.hidden_field:brand_id,:value=>(params[:brand_id]) %>
+
+  <div class="field">
+    <%= f.label :active %><br />
+    <%= f.check_box :active %>
+  </div>
+  <div class="field">
+    <%= f.label :value %><br />
+    <%= f.text_field :value %>
+  </div>
+  <div class="field">
+    <%= f.label :channel_incentive_cost %><br />
+    <%= f.text_field :channel_incentive_cost %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

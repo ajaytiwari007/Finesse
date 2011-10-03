@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Round:</b>
+  <%= @player_expense.round_id %>
+</p>
+
+<p>
+  <b>Player:</b>
+  <%= @player_expense.player_id %>
+</p>
+
+<p>
+  <b>Expense:</b>
+  <%= @player_expense.expense_id %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @player_expense.active %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @player_expense.value %>
+</p>
+
+
+<%= link_to 'Edit', edit_player_expense_path(@player_expense) %> |
+<%= link_to 'Back', player_expenses_path %>

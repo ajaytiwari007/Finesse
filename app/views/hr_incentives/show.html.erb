@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @hr_incentive.name %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @hr_incentive.active %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%= @hr_incentive.cost %>
+</p>
+
+
+<%= link_to 'Edit', edit_hr_incentive_path(@hr_incentive) %> |
+<%= link_to 'Back', hr_incentives_path %>

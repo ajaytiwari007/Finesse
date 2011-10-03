@@ -1,0 +1,2 @@
+module StudentGroupCaseStudiesHelper
+end

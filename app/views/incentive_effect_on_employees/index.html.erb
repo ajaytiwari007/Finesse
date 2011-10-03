@@ -1,0 +1,27 @@
+<h1>Listing incentive_effect_on_employees</h1>
+
+<table>
+  <tr>
+    <th>Employee</th>
+    <th>Hr incentive</th>
+    <th>Ratio</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @incentive_effect_on_employees.each do |incentive_effect_on_employee| %>
+  <tr>
+    <td><%= incentive_effect_on_employee.employee_id %></td>
+    <td><%= incentive_effect_on_employee.hr_incentive_id %></td>
+    <td><%= incentive_effect_on_employee.ratio %></td>
+    <td><%= link_to 'Show', incentive_effect_on_employee %></td>
+    <td><%= link_to 'Edit', edit_incentive_effect_on_employee_path(incentive_effect_on_employee) %></td>
+    <td><%= link_to 'Destroy', incentive_effect_on_employee, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Incentive effect on employee', new_incentive_effect_on_employee_path %>

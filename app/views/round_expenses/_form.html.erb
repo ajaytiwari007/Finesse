@@ -1,0 +1,25 @@
+<%= form_for(@round_expense) do |f| %>
+  <% if @round_expense.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@round_expense.errors.count, "error") %> prohibited this round_expense from being saved:</h2>
+
+      <ul>
+      <% @round_expense.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :round_id %><br />
+    <%= f.text_field :round_id %>
+  </div>
+  <div class="field">
+    <%= f.label :expense_id %><br />
+    <%= f.text_field :expense_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

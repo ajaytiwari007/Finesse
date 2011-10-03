@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Round:</b>
+  <%= @selected_medium.round_id %>
+</p>
+
+<p>
+  <b>Brand:</b>
+  <%= @selected_medium.brand_id %>
+</p>
+
+<p>
+  <b>Media:</b>
+  <%= @selected_medium.media_id %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @selected_medium.active %>
+</p>
+
+<p>
+  <b>Advertising cost:</b>
+  <%= @selected_medium.advertising_cost %>
+</p>
+
+
+<%= link_to 'Edit', edit_selected_medium_path(@selected_medium) %> |
+<%= link_to 'Back', selected_media_path %>

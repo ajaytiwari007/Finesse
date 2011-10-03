@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Round:</b>
+  <%= @liability.round_id %>
+</p>
+
+<p>
+  <b>Player:</b>
+  <%= @liability.player_id %>
+</p>
+
+<p>
+  <b>Long term loans:</b>
+  <%= @liability.long_term_loans %>
+</p>
+
+<p>
+  <b>Short term loans:</b>
+  <%= @liability.short_term_loans %>
+</p>
+
+<p>
+  <b>Net worth:</b>
+  <%= @liability.net_worth %>
+</p>
+
+
+<%= link_to 'Edit', edit_liability_path(@liability) %> |
+<%= link_to 'Back', liabilities_path %>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Round:</b>
+  <%= @consumer_selection.round_id %>
+</p>
+
+<p>
+  <b>Customer:</b>
+  <%= @consumer_selection.customer_id %>
+</p>
+
+<p>
+  <b>Purchase:</b>
+  <%= @consumer_selection.purchase %>
+</p>
+
+<p>
+  <b>Brand:</b>
+  <%= @consumer_selection.brand_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_consumer_selection_path(@consumer_selection) %> |
+<%= link_to 'Back', consumer_selections_path %>

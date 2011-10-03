@@ -1,0 +1,28 @@
+<h1>Listing channel_incentives</h1>
+
+<table cellpadding="3px" cellspacing="3px">
+  <tr>
+    <th>Name</th>
+    <th>Incentive type</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @channel_incentives.each do |channel_incentive| %>
+  <tr align="center">
+    <td><%= channel_incentive.name %></td>
+    <td><%= channel_incentive.incentive_type %></td>
+    <td><%= link_to 'Show', channel_incentive %></td>
+    <td><%= link_to 'Edit', edit_channel_incentive_path(channel_incentive) %></td>
+    <td><%= link_to 'Destroy', channel_incentive, :confirm => 'Are you sure?', :method => :delete %></td>
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= render 'form' %>
+
+<%= link_to 'Back', :controller => :welcome,:action => "index" %>

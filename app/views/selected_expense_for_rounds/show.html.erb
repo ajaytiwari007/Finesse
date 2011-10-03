@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Expense for round:</b>
+  <%= @selected_expense_for_round.expense_for_round_id %>
+</p>
+
+<p>
+  <b>Player:</b>
+  <%= @selected_expense_for_round.player_id %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @selected_expense_for_round.active %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @selected_expense_for_round.value %>
+</p>
+
+
+<%= link_to 'Edit', edit_selected_expense_for_round_path(@selected_expense_for_round) %> |
+<%= link_to 'Back', selected_expense_for_rounds_path %>

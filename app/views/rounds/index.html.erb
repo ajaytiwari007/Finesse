@@ -1,0 +1,25 @@
+<h1>Listing rounds</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Case study</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @rounds.each do |round| %>
+  <tr>
+    <td><%= round.name %></td>
+    <td><%= round.case_study_id %></td>
+    <td><%= link_to 'Show', round %></td>
+    <td><%= link_to 'Edit', edit_round_path(round) %></td>
+    <td><%= link_to 'Destroy', round, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Round',:action => "new",:case_study_id=>1 %>

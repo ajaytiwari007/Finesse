@@ -1,0 +1,37 @@
+<h1>Listing consumers</h1>
+
+<table cellpadding="5" cellspacing="5">
+  <tr>
+    <th>Dealer</th>
+    <th>Name</th>
+    <th>Consumer type</th>
+    <th>Product type</th>
+    <th>Probability of purchase</th>
+    <th>Ratio of ad</th>
+    <th>Ratio of channel push</th>
+    <th>Ratio of price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @consumers.each do |consumer| %>
+  <tr>
+    <td><%= consumer.dealer_id %></td>
+    <td><%= consumer.name %></td>
+    <td><%= consumer.consumer_type_id %></td>
+    <td><%= consumer.product_type_id %></td>
+    <td><%= consumer.probability_of_purchase %></td>
+    <td><%= consumer.ratio_of_ad %></td>
+    <td><%= consumer.ratio_of_channel_push %></td>
+    <td><%= consumer.ratio_of_price %></td>
+    <td><%= link_to 'Show', consumer %></td>
+    <td><%= link_to 'Edit', edit_consumer_path(consumer) %></td>
+    <td><%= link_to 'Destroy', consumer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Consumer', new_consumer_path %>

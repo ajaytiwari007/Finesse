@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @dealer.name %>
+</p>
+
+<p>
+  <b>Factory:</b>
+  <%= @dealer.factory_id %>
+</p>
+
+<p>
+  <b>Consumer catchment:</b>
+  <%= @dealer.consumer_catchment %>
+</p>
+
+
+<%= link_to 'Edit', edit_dealer_path(@dealer) %> |
+<%= link_to 'Back', dealers_path %>

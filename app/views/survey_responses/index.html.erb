@@ -1,0 +1,27 @@
+<h1>Listing survey_responses</h1>
+
+<table>
+  <tr>
+    <th>Player</th>
+    <th>Student group survey</th>
+    <th>Question option</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @survey_responses.each do |survey_response| %>
+  <tr>
+    <td><%= survey_response.player_id %></td>
+    <td><%= survey_response.student_group_survey_id %></td>
+    <td><%= survey_response.question_option_id %></td>
+    <td><%= link_to 'Show', survey_response %></td>
+    <td><%= link_to 'Edit', edit_survey_response_path(survey_response) %></td>
+    <td><%= link_to 'Destroy', survey_response, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Survey response', new_survey_response_path %>

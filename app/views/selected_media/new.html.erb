@@ -1,0 +1,45 @@
+
+<center>
+<%= form_tag :action => 'create',:brand_id=>@brand.id ,:round_id=>@round.id %>
+
+  <h2 class="demoHeaders">ALL MEDIA INCENTIVES</h2>
+
+    <div id="accordion" align="center">
+
+          <% @selected_medium.each_with_index do |selected_medium, index| %>
+            <%= fields_for "selected_media[#{index}]", selected_medium do |f| %>
+
+              <% x_medium=@all_media[index] %>
+              <%= f.hidden_field :brand_id, :value=>@brand.id %>
+              <% if SelectedMedium.find(:first,:conditions=>["brand_id=? and round_id=? and media_id=?",@brand.id,@round.id,x_medium.id])%>
+                <% @state= true %>
+              <%else%>
+                <% @state= false %>
+              <% end %>
+              <h3><a href="#"><b style="color: orange;"><%= x_medium.name %></b></a></h3>
+                <div>
+             <h5 align="right">
+            <%= f.check_box :media_id, {:checked => @state}, "#{x_medium.id}"  %></h5>
+            <table>
+                  <tr>
+                  <td><%= image_tag("factory_bought.png",:size => '150x150') %></td>
+                  <td>
+                  <table>
+                      <tr>
+                      <td>Media Name :</td>
+                      <td><%= x_medium.name %></td>
+                      </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+              <% end %>
+                  </div>
+
+            <%end%>
+      </div>
+    <%= submit_tag "View Result", :class=>"cbutton"%>
+
+
+
+</center>

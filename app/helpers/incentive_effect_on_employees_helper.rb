@@ -1,0 +1,2 @@
+module IncentiveEffectOnEmployeesHelper
+end

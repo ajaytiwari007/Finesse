@@ -1,0 +1,232 @@
+<% @pnls=Pnl.find(:all,:conditions => ['round_id=? and player_id=? or round_id=? and player_id=?',params[:round_id],params[:player_id],(params[:round_id].to_i)-1,params[:player_id]],:order => 'round_id DESC') %>
+
+  <h1  align="center"> PROFIT AND LOSS FOR THE ROUND <%= Round.find(params[:round_id]).name %></h1>
+
+<table align="center" border="0px" style="border-collapse:collapse;font-variant: small-caps;letter-spacing: 0.2em; " width="75%">
+  <tr><td colspan="11" bgcolor="black"></td> </tr>
+  <tr>
+     <th bgcolor="black" rowspan="25"></th>
+     <th>Particulars</th>
+     <th bgcolor="black" rowspan="25"></th>
+    <% @pnls.each do |pnl| %>
+     <th width="20%"></th>
+     <th bgcolor="black" rowspan="25"></th>
+     <th width="20%" align="right">Year Ended <%= Round.find(pnl.round_id).name %> </th>
+     <th bgcolor="black" rowspan="25"></th>
+     <% end %>
+   </tr>
+   <tr><td colspan="11" bgcolor="black"></td> </tr>
+
+   <tr>
+ <td>Sales</td>
+ <% @pnls.each do |pnl| %>
+ <td></td>
+ <td align="right"><%= pnl.income %></td>
+
+   <% end%>
+   </tr>
+
+   <tr>
+ <td></td>
+ <% @pnls.each do |pnl| %>
+ <td></td>
+ <td bgcolor="black"></td>
+ <% end %>
+   </tr>
+   <tr>
+ <th>Income</th>
+ <% @pnls.each do |pnl| %>
+ <td></td>
+ <th align="right"><%= pnl.income %></th>
+
+ <% end %>
+   </tr>
+
+  <tr>
+    <td></td>
+    <% @pnls.each do |pnl| %>
+    <td></td>
+    <td bgcolor="black"></td>
+    <% end %>
+  </tr>
+
+
+   <tr>
+   <td>Sales</td>
+ <% @pnls.each do |pnl| %>
+ <td></td>
+ <td align="right"><%= pnl.income %></td>
+
+ <% end %>
+   </tr>
+
+   <tr>
+ <td>Cogs</td>
+ <% @pnls.each do |pnl| %>
+ <td></td>
+ <td align="right"><%= pnl.cogs %></td>
+
+ <% end %>
+   </tr>
+
+   <tr>
+ <td>Employee Cost</td>
+ <% @pnls.each do |pnl| %>
+ <td></td>
+ <td align="right"><%= pnl.employee_cost %></td>
+
+  <% end %>
+   </tr>
+
+   <tr>
+ <td>SGA expenses</td>
+ <% @pnls.each do |pnl| %>
+ <td></td>
+ <td align="right"><%= pnl.sga %></td>
+
+   <% end %>
+   </tr>
+
+  <tr>
+    <td></td>
+    <% @pnls.each do |pnl| %>
+    <td></td>
+    <td bgcolor="black"></td>
+    <% end %>
+  </tr>
+
+
+
+   <tr>
+ <th>EBITDA</th>
+ <% @pnls.each do |pnl| %>
+ <td></td>
+ <th align="right"><%= pnl.ebitda %></th>
+
+   <% end %>
+   </tr>
+
+
+   <tr>
+ <td></td>
+ <% @pnls.each do |pnl| %>
+ <td></td>
+ <td bgcolor="black"></td>
+ <% end %>
+   </tr>
+
+
+   <tr>
+ <td>EDITDA</td>
+ <% @pnls.each do |pnl| %>
+ <td></td>
+ <td align="right"><%= pnl.ebitda %></td>
+
+   <% end %>
+   </tr>
+
+   <tr>
+  <td>Interest</td>
+ <% @pnls.each do |pnl| %>
+  <td></td>
+ <td align="right"><%=pnl.interest%></td>
+
+   <% end%>
+   </tr>
+
+   <tr>
+   <td>Inv Income</td>
+ <% @pnls.each do |pnl| %>
+   <td></td>
+ <td align="right"><%=pnl.inv_income%></td>
+
+   <% end %>
+   </tr>
+
+   <tr>
+   <td>Depreciation</td>
+ <% @pnls.each do |pnl| %>
+   <td></td>
+ <td align="right"><%= pnl.depreciation %></td>
+
+   <% end%>
+   </tr>
+
+
+   <tr>
+ <td></td>
+ <% @pnls.each do |pnl| %>
+ <td></td>
+ <td bgcolor="black"></td>
+ <% end %>
+   </tr>
+
+
+
+   <tr>
+<th>Pbt</th>
+ <% @pnls.each do |pnl| %>
+ <td></td>
+<th align="right"><%=pnl.pbt %></th>
+<% end %>
+   </tr>
+
+
+   <tr>
+ <td></td>
+ <% @pnls.each do |pnl| %>
+ <td></td>
+ <td bgcolor="black"></td>
+ <% end %>
+   </tr>
+
+
+
+   <tr>
+    <td>PBT</td>
+ <% @pnls.each do |pnl| %>
+ <td></td>
+ <td align="right"><%= pnl.pbt%></td>
+    <% end %>
+  </tr>
+
+  <tr>
+<td>Tax</td>
+    <% @pnls.each do |pnl| %>
+    <td></td>
+  <td align="right"><%= pnl.tax %></td>
+  <% end %>
+   </tr>
+
+
+   <tr>
+ <td></td>
+ <% @pnls.each do |pnl| %>
+ <td></td>
+ <td bgcolor="black"></td>
+ <% end %>
+   </tr>
+
+
+  <tr>
+    <th>Pat</th>
+    <% @pnls.each do |pnl| %>
+    <td></td>
+  <th align="right"><%= pnl.pat %></th>
+  <% end %>
+   </tr>
+
+   <tr>
+ <td></td>
+ <% @pnls.each do |pnl| %>
+ <td></td>
+ <td bgcolor="black"></td>
+ <% end %>
+   </tr>
+
+
+   <tr><td colspan="11" bgcolor="black"></td> </tr>
+   </table>
+
+
+

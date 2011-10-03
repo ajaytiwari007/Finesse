@@ -1,0 +1,23 @@
+<h1>Listing investment_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @investment_types.each do |investment_type| %>
+  <tr>
+    <td><%= investment_type.name %></td>
+    <td><%= link_to 'Show', investment_type %></td>
+    <td><%= link_to 'Edit', edit_investment_type_path(investment_type) %></td>
+    <td><%= link_to 'Destroy', investment_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Investment type', new_investment_type_path %>

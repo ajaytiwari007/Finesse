@@ -1,0 +1,23 @@
+<h1>Listing macro_indicators</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @macro_indicators.each do |macro_indicator| %>
+  <tr>
+    <td><%= macro_indicator.name %></td>
+    <td><%= link_to 'Show', macro_indicator %></td>
+    <td><%= link_to 'Edit', edit_macro_indicator_path(macro_indicator) %></td>
+    <td><%= link_to 'Destroy', macro_indicator, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Macro indicator', new_macro_indicator_path %>

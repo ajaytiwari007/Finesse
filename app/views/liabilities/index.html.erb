@@ -1,0 +1,32 @@
+<h1>Listing liabilities</h1>
+
+<table>
+  <tr>
+    <th>Round</th>
+    <th>Player</th>
+    <th>Long term loans</th>
+    <th>Short term loans</th>
+    <th>Net worth</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @liabilities.each do |liability| %>
+  <tr>
+    <td><%= liability.round_id %></td>
+    <td><%= liability.player_id %></td>
+    <td><%= liability.long_term_loans %></td>
+    <td><%= liability.short_term_loans %></td>
+    <td><%= liability.net_worth %></td>
+    <td><%= link_to 'Show', liability %></td>
+    <td><%= link_to 'Edit', edit_liability_path(liability) %></td>
+    <td><%= link_to 'Destroy', liability, :confirm => 'Are you sure?', :method => :delete %></td>
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Liability', new_liability_path %>

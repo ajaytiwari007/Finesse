@@ -1,0 +1,25 @@
+<h1>Listing macro_indicator_for_the_rounds</h1>
+
+<table>
+  <tr>
+    <th>Round</th>
+    <th>Macro indicator option</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @macro_indicator_for_the_rounds.each do |macro_indicator_for_the_round| %>
+  <tr>
+    <td><%= macro_indicator_for_the_round.round_id %></td>
+    <td><%= macro_indicator_for_the_round.macro_indicator_option_id %></td>
+    <td><%= link_to 'Show', macro_indicator_for_the_round %></td>
+    <td><%= link_to 'Edit', edit_macro_indicator_for_the_round_path(macro_indicator_for_the_round) %></td>
+    <td><%= link_to 'Destroy', macro_indicator_for_the_round, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Macro indicator for the round', new_macro_indicator_for_the_round_path %>

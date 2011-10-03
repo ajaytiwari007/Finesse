@@ -1,0 +1,21 @@
+<%= form_for(@factory_input) do |f| %>
+  <% if @factory_input.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@factory_input.errors.count, "error") %> prohibited this factory_input from being saved:</h2>
+
+      <ul>
+      <% @factory_input.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

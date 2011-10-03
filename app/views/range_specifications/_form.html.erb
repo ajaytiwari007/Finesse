@@ -1,0 +1,90 @@
+<%= form_for(@range_specification) do |f| %>
+  <% if @range_specification.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@range_specification.errors.count, "error") %> prohibited this range_specification from being saved:</h2>
+
+      <ul>
+      <% @range_specification.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :min_effect_of_hr_incentive %><br />
+    <%= f.text_field :min_effect_of_hr_incentive %>
+  </div>
+  <div class="field">
+    <%= f.label :max_effect_of_hr_incentive %><br />
+    <%= f.text_field :max_effect_of_hr_incentive %>
+  </div>
+  <div class="field">
+    <%= f.label :min_effect_of_channel_incentive %><br />
+    <%= f.text_field :min_effect_of_channel_incentive %>
+  </div>
+  <div class="field">
+    <%= f.label :max_effect_of_channel_incentive %><br />
+    <%= f.text_field :max_effect_of_channel_incentive %>
+  </div>
+  <div class="field">
+    <%= f.label :min_effect_of_media %><br />
+    <%= f.text_field :min_effect_of_media %>
+  </div>
+  <div class="field">
+    <%= f.label :max_effect_of_media %><br />
+    <%= f.text_field :max_effect_of_media %>
+  </div>
+  <div class="field">
+    <%= f.label :min_dealer_catchment %><br />
+    <%= f.text_field :min_dealer_catchment %>
+  </div>
+  <div class="field">
+    <%= f.label :max_dealer_catchment %><br />
+    <%= f.text_field :max_dealer_catchment %>
+  </div>
+  <div class="field">
+    <%= f.label :min_consumer_catchment %><br />
+    <%= f.text_field :min_consumer_catchment %>
+  </div>
+  <div class="field">
+    <%= f.label :max_consumer_catchment %><br />
+    <%= f.text_field :max_consumer_catchment %>
+  </div>
+  <div class="field">
+    <%= f.label :min_employee_count %><br />
+    <%= f.text_field :min_employee_count %>
+  </div>
+  <div class="field">
+    <%= f.label :max_employee_count %><br />
+    <%= f.text_field :max_employee_count %>
+  </div>
+    <div class="field">
+    <%= f.label :min_consumer_demographics %><br />
+    <%= f.text_field :min_consumer_demographics %>
+    </div>
+    <div class="field">
+    <%= f.label :max_consumer_demographics %><br />
+    <%= f.text_field :max_consumer_demographics %>
+    </div>
+    <div class="field">
+            <%= f.label :min_probability_of_purchase %><br />
+            <%= f.text_field :min_probability_of_purchase %>
+        </div>
+        <div class="field">
+        <%= f.label :max_probability_of_purchase %><br />
+        <%= f.text_field :max_probability_of_purchase %>
+        </div>
+    <div class="field">
+            <%= f.label :min_effect_of_price %><br />
+            <%= f.text_field :min_effect_of_price %>
+        </div>
+        <div class="field">
+        <%= f.label :max_effect_of_price %><br />
+        <%= f.text_field :max_effect_of_price %>
+        </div>
+
+    <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

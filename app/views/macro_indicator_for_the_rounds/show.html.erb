@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Round:</b>
+  <%= @macro_indicator_for_the_round.round_id %>
+</p>
+
+<p>
+  <b>Macro indicator option:</b>
+  <%= @macro_indicator_for_the_round.macro_indicator_option_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_macro_indicator_for_the_round_path(@macro_indicator_for_the_round) %> |
+<%= link_to 'Back', macro_indicator_for_the_rounds_path %>

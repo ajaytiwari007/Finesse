@@ -1,0 +1,23 @@
+<h1>Listing factory_inputs</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @factory_inputs.each do |factory_input| %>
+  <tr>
+    <td><%= factory_input.name %></td>
+    <td><%= link_to 'Show', factory_input %></td>
+    <td><%= link_to 'Edit', edit_factory_input_path(factory_input) %></td>
+    <td><%= link_to 'Destroy', factory_input, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Factory input', new_factory_input_path %>

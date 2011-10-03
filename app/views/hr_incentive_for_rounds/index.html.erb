@@ -1,0 +1,25 @@
+<h1>Listing hr_incentive_for_rounds</h1>
+
+<table>
+  <tr>
+    <th>Round</th>
+    <th>Hr incentive</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @hr_incentive_for_rounds.each do |hr_incentive_for_round| %>
+  <tr>
+    <td><%= hr_incentive_for_round.round_id %></td>
+    <td><%= hr_incentive_for_round.hr_incentive_id %></td>
+    <td><%= link_to 'Show', hr_incentive_for_round %></td>
+    <td><%= link_to 'Edit', edit_hr_incentive_for_round_path(hr_incentive_for_round) %></td>
+    <td><%= link_to 'Destroy', hr_incentive_for_round, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Hr incentive for round', new_hr_incentive_for_round_path %>

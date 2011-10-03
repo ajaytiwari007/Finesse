@@ -1,0 +1,29 @@
+<h1>Listing hr_incentives</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Active</th>
+    <th>Cost</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @hr_incentives.each do |hr_incentive| %>
+  <tr>
+    <td><%= hr_incentive.name %></td>
+    <td><%= hr_incentive.active %></td>
+    <td><%= hr_incentive.cost %></td>
+    <td><%= link_to 'Show', hr_incentive %></td>
+    <td><%= link_to 'Edit', edit_hr_incentive_path(hr_incentive) %></td>
+    <td><%= link_to 'Destroy', hr_incentive, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= render 'form' %>
+
+<%= link_to 'Back',:controller => :welcome,:action => "index" %>

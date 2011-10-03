@@ -1,0 +1,83 @@
+<center>
+
+  <!-- Accordion -->
+  <h2 class="demoHeaders">ALL FACTORIES</h2>
+
+  <div id="accordion" align="center">
+    <div>
+           <% @factories=Factory.all %>
+                  <% @factories.each do |factory| %>
+                      <h3><a href="#"><b style="color: orange;"><%= factory.name %></b></a></h3>
+
+
+          <div>
+
+            <table>
+              <tr>
+                <td>
+                    <%= hidden_field_tag :factory_id, :value=>factory.id %>
+
+
+                    <% @p=Factory.find(factory.id) %>
+                      <%if @player_factory=PlayerFactory.find(:first,:conditions=>['player_id=? and factory_id=?',@player.id,@p.id]) %>
+                        <% @player_factory=PlayerFactory.find(:first,:conditions=>['player_id=? and factory_id=?',@player.id,@p.id]) %>
+                        <% if @player_factory.active ==  true %>
+                          <%= image_tag("factory_bought.png",:size => '150x150') %>
+                        <%end%>
+
+                      <% else %>
+                          <%= link_to image_tag("factory_buy.png",:size => '150x150'), :action=>:buy_factory,:player_id=>@player.id ,:factory_id=>@p.id %>
+                      <% end %>
+
+                      </td>
+                      <td>
+                        <table>
+                          <tr>
+                            <td>Factory Name :</td>
+                            <td><%= factory.name %></td>
+                          </tr>
+                          <tr>
+                            <td> No.Of Employees :</td>
+                            <td><%= factory.employee_count %>  </td>
+                          </tr>
+                          <tr>
+                            <td>Capacity :</td>
+                            <td><%= factory.capacity %> </td>
+                          </tr>
+                          <tr>
+                            <td> Distance To Market :</td>
+                            <td><%= factory.distance_to_market %></td>
+                          </tr>
+                          <tr>
+                            <td> Product Type_ID :</td>
+                            <td><%= factory.product_type_id %>   </td>
+                          </tr>
+                          <tr>
+                            <td>Dealer_Catchment :</td>
+                            <td><%= factory.dealer_catchment %>  </td>
+                          </tr>
+                          <tr>
+                            <td>Cost :</td>
+                            <td><%= factory.cost %>   </td>
+                          </tr>
+                        </table>
+                      </td>
+                      </tr>
+                      </table>
+
+
+                      </div>
+
+      <% end %>
+    </div>
+  </div>
+            <br/>
+            <br/>
+
+
+
+     <%= link_to 'Select Hr Incentive', :controller => :selected_hr_incentives,:action => 'new',:player_id=>@player.id,:round_id=>@round.id%>
+
+</center>
+
+

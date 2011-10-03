@@ -1,0 +1,29 @@
+
+<h1>Listing ad_indices</h1>
+
+<table>
+  <tr>
+    <th>Round</th>
+    <th>Brand</th>
+    <th>Ad index</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ad_indices.each do |ad_index| %>
+  <tr>
+    <td><%= ad_index.round_id %></td>
+    <td><%= ad_index.brand_id %></td>
+    <td><%= ad_index.ad_index %></td>
+    <td><%= link_to 'Show', ad_index %></td>
+    <td><%= link_to 'Edit', edit_ad_index_path(ad_index) %></td>
+    <td><%= link_to 'Destroy', ad_index, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Calculate Ad index', :action => 'calculate_ad_index' ,:round_id=>1%>
+<%= link_to 'Delete all Ad indices', :action => 'delete_all_ad_indices' %>

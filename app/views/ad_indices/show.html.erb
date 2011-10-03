@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Round:</b>
+  <%= @ad_index.round_id %>
+</p>
+
+<p>
+  <b>Brand:</b>
+  <%= @ad_index.brand_id %>
+</p>
+
+<p>
+  <b>Ad index:</b>
+  <%= @ad_index.ad_index %>
+</p>
+
+
+<%= link_to 'Edit', edit_ad_index_path(@ad_index) %> |
+<%= link_to 'Back', ad_indices_path %>

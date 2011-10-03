@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Round:</b>
+  <%= @employee_expense.round_id %>
+</p>
+
+<p>
+  <b>Player:</b>
+  <%= @employee_expense.player_id %>
+</p>
+
+<p>
+  <b>Employee efficiency:</b>
+  <%= @employee_expense.employee_efficiency %>
+</p>
+
+
+<%= link_to 'Edit', edit_employee_expense_path(@employee_expense) %> |
+<%= link_to 'Back', employee_expenses_path %>

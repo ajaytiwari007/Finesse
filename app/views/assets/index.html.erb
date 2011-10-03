@@ -1,0 +1,34 @@
+<h1>Listing assets</h1>
+
+<table>
+  <tr>
+    <th>Round</th>
+    <th>Player</th>
+    <th>Fixed assets</th>
+    <th>Investments</th>
+    <th>Inventory</th>
+    <th>Cash</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @assets.each do |asset| %>
+  <tr>
+    <td><%= asset.round_id %></td>
+    <td><%= asset.player_id %></td>
+    <td><%= asset.fixed_assets %></td>
+    <td><%= asset.investments %></td>
+    <td><%= asset.inventory %></td>
+    <td><%= asset.cash %></td>
+    <td><%= link_to 'Show', asset %></td>
+    <td><%= link_to 'Edit', edit_asset_path(asset) %></td>
+    <td><%= link_to 'Destroy', asset, :confirm => 'Are you sure?', :method => :delete %></td>
+     <td> <%= link_to 'Add Liability', :controller=> :liabilities, :action=>"new",:pid=>asset.player_id%> </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Asset', new_asset_path %>

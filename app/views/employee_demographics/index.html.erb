@@ -1,0 +1,27 @@
+<h1>Listing employee_demographics</h1>
+
+<table>
+  <tr>
+    <th>Case study</th>
+    <th>Employee type</th>
+    <th>Ratio</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @employee_demographics.each do |employee_demographic| %>
+  <tr>
+    <td><%= employee_demographic.case_study_id %></td>
+    <td><%= employee_demographic.employee_type_id %></td>
+    <td><%= employee_demographic.ratio %></td>
+    <td><%= link_to 'Show', employee_demographic %></td>
+    <td><%= link_to 'Edit', edit_employee_demographic_path(employee_demographic) %></td>
+    <td><%= link_to 'Destroy', employee_demographic, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Employee demographic', new_employee_demographic_path %>

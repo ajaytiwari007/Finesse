@@ -1,0 +1,33 @@
+<%= form_for(@consumer_selection) do |f| %>
+  <% if @consumer_selection.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@consumer_selection.errors.count, "error") %> prohibited this consumer_selection from being saved:</h2>
+
+      <ul>
+      <% @consumer_selection.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :round_id %><br />
+    <%= f.text_field :round_id %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_id %><br />
+    <%= f.text_field :customer_id %>
+  </div>
+  <div class="field">
+    <%= f.label :purchase %><br />
+    <%= f.check_box :purchase %>
+  </div>
+  <div class="field">
+    <%= f.label :brand_id %><br />
+    <%= f.text_field :brand_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

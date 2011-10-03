@@ -1,0 +1,29 @@
+<%= form_for(@factory_input_cost) do |f| %>
+  <% if @factory_input_cost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@factory_input_cost.errors.count, "error") %> prohibited this factory_input_cost from being saved:</h2>
+
+      <ul>
+      <% @factory_input_cost.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :factory_input_id %><br />
+    <%= f.text_field :factory_input_id %>
+  </div>
+  <div class="field">
+    <%= f.label :round_id %><br />
+    <%= f.text_field :round_id %>
+  </div>
+  <div class="field">
+    <%= f.label :input_cost %><br />
+    <%= f.text_field :input_cost %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

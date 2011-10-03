@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  student_group_user_id: 1
+  case_study_id: 1
+  role_id: 1
+
+two:
+  name: MyString
+  student_group_user_id: 1
+  case_study_id: 1
+  role_id: 1

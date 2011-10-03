@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @consumer_type.name %>
+</p>
+
+<p>
+  <b>Purchase quantity:</b>
+  <%= @consumer_type.purchase_quantity %>
+</p>
+
+
+<%= link_to 'Edit', edit_consumer_type_path(@consumer_type) %> |
+<%= link_to 'Back', consumer_types_path %>

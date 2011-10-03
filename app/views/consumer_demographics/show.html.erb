@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Dealer:</b>
+  <%= @consumer_demographic.dealer_id %>
+</p>
+
+<p>
+  <b>Consumer type:</b>
+  <%= @consumer_demographic.consumer_type_id %>
+</p>
+
+<p>
+  <b>Ratio:</b>
+  <%= @consumer_demographic.ratio %>
+</p>
+
+
+<%= link_to 'Edit', edit_consumer_demographic_path(@consumer_demographic) %> |
+<%= link_to 'Back', consumer_demographics_path %>

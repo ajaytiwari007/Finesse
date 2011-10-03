@@ -1,0 +1,35 @@
+<%= form_for(@production) do |f| %>
+  <% if @production.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@production.errors.count, "error") %> prohibited this production from being saved:</h2>
+
+      <ul>
+      <% @production.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+    <%= f.hidden_field :round_id,:value=>@round.id %>
+
+
+    <%= f.hidden_field :player_id,:value=>@player.id %>
+
+  <div class="field">
+    <%= f.label :active %><br />
+    <%= f.check_box :active %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br />
+    <%= f.text_field :quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :factory_id %><br />
+    <%= f.text_field :factory_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

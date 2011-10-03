@@ -1,0 +1,37 @@
+<%= form_for(@selected_medium) do |f| %>
+  <% if @selected_medium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@selected_medium.errors.count, "error") %> prohibited this selected_medium from being saved:</h2>
+
+      <ul>
+      <% @selected_medium.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :round_id %><br />
+    <%= f.text_field :round_id %>
+  </div>
+  <div class="field">
+    <%= f.label :brand_id %><br />
+    <%= f.text_field :brand_id %>
+  </div>
+  <div class="field">
+    <%= f.label :media_id %><br />
+    <%= f.text_field :media_id %>
+  </div>
+  <div class="field">
+    <%= f.label :active %><br />
+    <%= f.check_box :active %>
+  </div>
+  <div class="field">
+    <%= f.label :advertising_cost %><br />
+    <%= f.text_field :advertising_cost %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

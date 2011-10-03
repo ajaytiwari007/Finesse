@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @channel_incentive.name %>
+</p>
+
+<p>
+  <b>Incentive type:</b>
+  <%= @channel_incentive.incentive_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_channel_incentive_path(@channel_incentive) %> |
+<%= link_to 'Back', channel_incentives_path %>

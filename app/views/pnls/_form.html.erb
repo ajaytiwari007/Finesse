@@ -1,0 +1,44 @@
+<%= form_for(@pnl) do |f| %>
+  <% if @pnl.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pnl.errors.count, "error") %> prohibited this pnl from being saved:</h2>
+
+      <ul>
+      <% @pnl.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+
+    <%= f.hidden_field :round_id, :value=>params[:round_id] %>
+  </div>
+  <div class="field">
+
+    <%= f.hidden_field :player_id, :value=>@player.id %>
+  </div>
+
+    <div class="field">
+    <%= f.label :interest %><br />
+    <%= f.text_field :interest %>
+  </div>
+  <div class="field">
+    <%= f.label :inv_income %><br />
+    <%= f.text_field :inv_income %>
+  </div>
+  <div class="field">
+    <%= f.label :depreciation %><br />
+    <%= f.text_field :depreciation %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tax %><br />
+    <%= f.text_field :tax %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

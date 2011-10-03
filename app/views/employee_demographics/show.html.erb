@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Case study:</b>
+  <%= @employee_demographic.case_study_id %>
+</p>
+
+<p>
+  <b>Employee type:</b>
+  <%= @employee_demographic.employee_type_id %>
+</p>
+
+<p>
+  <b>Ratio:</b>
+  <%= @employee_demographic.ratio %>
+</p>
+
+
+<%= link_to 'Edit', edit_employee_demographic_path(@employee_demographic) %> |
+<%= link_to 'Back', employee_demographics_path %>

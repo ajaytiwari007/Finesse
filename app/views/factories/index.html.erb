@@ -1,0 +1,35 @@
+<h1>Listing factories</h1>
+
+<table cellpadding="3px" cellspacing="3px">
+  <tr align="center">
+    <th>Name</th>
+    <th>Employee count</th>
+    <th>Capacity</th>
+    <th>Distance to market</th>
+    <th>Product type</th>
+    <th>Dealer catchment</th>
+    <th>Cost</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @factories.each do |factory| %>
+  <tr align="center">
+    <td><%= factory.name %></td>
+    <td><%= factory.employee_count %></td>
+    <td><%= factory.capacity %></td>
+    <td><%= factory.distance_to_market %></td>
+    <td><%= factory.product_type_id %></td>
+    <td><%= factory.dealer_catchment %></td>
+    <td><%= factory.cost %></td>
+    <td><%= link_to 'Show', factory %></td>
+    <td><%= link_to 'Edit', edit_factory_path(factory) %></td>
+    <td><%= link_to 'Destroy', factory, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Factory', new_factory_path %>

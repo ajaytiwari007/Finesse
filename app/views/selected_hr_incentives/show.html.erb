@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<p>
+  <b>Player:</b>
+  <%= @selected_hr_incentive.player_id %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @selected_hr_incentive.active %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @selected_hr_incentive.value %>
+</p>
+
+<p>
+  <b>Hr incentive cost:</b>
+  <%= @selected_hr_incentive.hr_incentive_cost %>
+</p>
+
+<p>
+  <b>Hr incentive for round:</b>
+  <%= @selected_hr_incentive.hr_incentive_for_round_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_selected_hr_incentive_path(@selected_hr_incentive) %> |
+<%= link_to 'Back', selected_hr_incentives_path %>

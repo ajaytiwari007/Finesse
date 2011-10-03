@@ -1,0 +1,25 @@
+<%= form_for(@macro_indicator_for_round) do |f| %>
+  <% if @macro_indicator_for_round.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@macro_indicator_for_round.errors.count, "error") %> prohibited this macro_indicator_for_round from being saved:</h2>
+
+      <ul>
+      <% @macro_indicator_for_round.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :round_id %><br />
+    <%= f.text_field :round_id %>
+  </div>
+  <div class="field">
+    <%= f.label :macro_indicator_option_id %><br />
+    <%= f.text_field :macro_indicator_option_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

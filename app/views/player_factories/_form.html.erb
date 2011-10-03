@@ -1,0 +1,29 @@
+<%= form_for(@player_factory) do |f| %>
+  <% if @player_factory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@player_factory.errors.count, "error") %> prohibited this player_factory from being saved:</h2>
+
+      <ul>
+      <% @player_factory.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+
+    <%= f.hidden_field :player_id,:value=>params[:player_id] %>
+  </div>
+  <div class="field">
+    <%= f.label :factory_id %><br />
+    <%= f.text_field :factory_id %>
+  </div>
+  <div class="field">
+    <%= f.label :active %><br />
+    <%= f.check_box :active %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
